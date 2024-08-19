@@ -17,3 +17,9 @@ ___
 
 #### Run Code & Save Data
 ##### Run your code to extract data and save to a file or database for further analysis 
+
+#### Respect Robots.txt
+##### Many websites use a robots.txt file which specifies which pages can be scraped and which can not
+
+#### Rate Limiting
+##### To avoid overloading a website, you should add rate limiting to your scraper to limit the number of requests you send
