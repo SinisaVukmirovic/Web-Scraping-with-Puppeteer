@@ -23,3 +23,6 @@ ___
 
 #### Rate Limiting
 ##### To avoid overloading a website, you should add rate limiting to your scraper to limit the number of requests you send
+
+___
+##### After initialising NPM and instaling Puppeteer adding "type": "module" in package.json file to be able to use ES module syntax, the import syntax in Node.
