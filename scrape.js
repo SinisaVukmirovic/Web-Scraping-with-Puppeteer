@@ -26,7 +26,18 @@ const scrape = async () => {
         // instead we can return...
         return Array.from(bookElements).map(book => {
             const title = book.querySelector('h3 a').getAttribute('title');
-            return title;
+            const price = book.querySelector('.price_color').textContent;
+            const stock = book.querySelector('.instock.availability') ? 'In stock' : 'Out of stock';
+            const rating = book.querySelector('.star-rating').className.split(' ')[1];
+            const link = book.querySelector('h3 a').getAttribute('href');
+
+            return {
+                title,
+                price,
+                stock,
+                rating,
+                link
+            };
         });
     });
     // ...that console log
