@@ -1,6 +1,9 @@
 import puppeteer from "puppeteer";
 // all the methods used from Puppeteer are asynchronous, so we create an async function (or use IIFE)
 
+// to save scraped data into a JSON file, we can use "fs" module (file system) of NODE
+import fs from "fs";
+
 const scrape = async () => {
     // Puppeteer has "headless" browser
     // to launch that browser
@@ -41,7 +44,11 @@ const scrape = async () => {
         });
     });
     // ...that console log
-    console.log(books);
+    // console.log(books);
+
+    // JSON.stringify(file name, replacer, format)
+    fs.writeFileSync('books.json', JSON.stringify(books, null, 2)); 
+    console.log('Books data saved to books.json');
 
     // after everything we need to close the browser
     await browser.close();
